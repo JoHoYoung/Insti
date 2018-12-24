@@ -1,6 +1,11 @@
 # Instagram_Auto_Follow for marketing
 If you type your Insta Account with the address of an Instagram post, it provides a function to request follow to all the people who post the message.
 
+Nodejs + Selenium Project // 조호영
+
+It's very difficult for a marketer to request follow everyone in a particular post. The program reads all
+the comments on a particular post and request follow to them. Entering the ID and password of an account
+through the program will make marketing a few times easier. For this, you need nodejs, google chrome
 ### Required
 1. Nodejs
 2. Google Chorme
