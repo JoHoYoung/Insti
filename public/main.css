@@ -1,0 +1,97 @@
+@font-face {
+    font-family: Aileron;
+    src: url('./fonts/Aileron-Regular.woff') format('opentype')
+}
+
+html{
+    font-family: Aileron;
+    background-color: #44005f;
+}
+
+body{
+
+}
+
+#title{
+    margin-bottom: 0;
+    text-align: center;
+    color: white;
+    margin-top: 15vw;
+    font-size: 6vw;
+}
+
+#url{
+    border: 0.5vw solid #c5c500;
+    float: left;
+    margin-left: 24vw;
+    height: 4vw;
+    width: 40vw;
+    margin-top: 3vw;
+    padding: 0.4vw;
+    font-size: 1.8vw;
+
+    color: #525252;
+    border-radius: 0.3vw;
+
+}
+input::placeholder{
+    color:#afafaf;
+}
+#submit{
+
+    -webkit-appearance: none;
+    float: left;
+    font-family: Aileron;
+    width: 7vw;
+    height: 4vw;
+    margin-top: 3vw;
+    font-size: 1.5vw;
+    margin-right: 20vw;
+    border-radius: 0.3vw;
+    background-color: #c5c500;
+    color: white;
+    border: 0.1vw solid #eaff00;
+}
+
+#msg{
+    margin-top: 19vw;
+    height: 15vw;
+    width: 50vw;
+    font-size: 7vw;
+    color: white;
+    font-family: Aileron;
+    margin-left: 28vw;
+}
+
+.acc{
+    padding-left: 1vw;
+    font-size:1vw;
+    color: white;
+    border: none;
+    -webkit-appearance: none;
+    margin-top: 2vw;
+    margin-left: 30vw;
+    float: left;
+    display: block;
+    background-color: #260035;
+    width: 10vw;
+    height: 3vw;
+    margin-right: 2vw;
+}
+
+
+.acc2{
+    padding-left: 1vw;
+    font-size:1vw;
+    color: white;
+    border: none;
+    -webkit-appearance: none;
+    margin-top: 2vw;
+    margin-left: 1vw;
+    float: left;
+    display: block;
+    background-color: #260035;
+    width: 10vw;
+    height: 3vw;
+    margin-right: 2vw;
+}
