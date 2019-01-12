@@ -14,9 +14,11 @@
     "cors": "^2.8.5",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "mysql2": "^1.6.4",
     "path": "^0.12.7",
     "selenium-webdriver": "^4.0.0-alpha.1",
     "serve-static": "^1.13.2",
-    "sleep": "^5.2.3"
+    "sleep": "^5.2.3",
+    "uuid": "^3.3.2"
   }
 }

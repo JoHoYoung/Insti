@@ -1,14 +1,15 @@
 # Instagram_Auto_Follow for marketing
-If you type your Insta Account with the address of an Instagram post, it provides a function to request follow to all the people who post the message.
+
 
 Nodejs + Selenium Project // 조호영
 
-It's very difficult for a marketer to request follow everyone in a particular post. The program reads all
-the comments on a particular post and request follow to them. Entering the ID and password of an account
-through the program will make marketing a few times easier. For this, you need nodejs, google chrome
+
+#### 제공하는 기능
+1. 인스타그램 특정 게시글의 url을 입력하면, 그 게시글에 댓글을 단 사람들을 팔로우 한다.
+2. 특정 해시태그와 퍼센트를 입력하면, 특정해시태그의 검색결과로 나오는 게시글들 중 입력한 퍼센트 만큼의 글에 like를 누르고, 유저가 지정한 내용의 댓글을  자동으로 입력한다.
+3. 특정 사람의 프로필 url과 퍼센트를 입력하면, 그 사람의 게시글들 중 입력한 퍼센트 만큼의 글에 like를 누르고, 유저가 지정한 내용의 댓글을 자동입력한다.
+4. 특정 게시글의 url과 퍼센트를 입력하면, 그 게시글의 댓글중 입력한 퍼센트 만큼의 댓글에 like를 누른다.
+
 ### Required
 1. Nodejs
-2. Google Chorme
-3. Detailed instructions can be found in the readme.txt( korean )
-<img width="1440" alt="2018-12-24 9 52 22" src="https://user-images.githubusercontent.com/37579650/50399907-396eea00-07c6-11e9-9922-7dd63e7aa462.png">
-
+2. Google Chorme | Firefox
