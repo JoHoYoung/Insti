@@ -1,0 +1,25 @@
+<html>
+<link rel="stylesheet" type="text/css" href="../public/css/common.css">
+<% include header%>
+<body>
+<div class = 'container'>
+<form method="post" action="/create">
+    <input type = 'hidden' name="table" value ='POSTS'>
+    <input type = 'text' name = 'url' id="url" placeholder="Url">
+    <input type = 'text' name = 'ratio' id = 'ratio' placeholder="Ratio">
+    <input type = 'submit' id = 'submit' value = 'GET'>
+</form>
+
+<% for(let i = 0 ;i<data.length;i++){%>
+<div class = 'rowblock'>
+    <span class= 'url'><%= data[i].url%></span><span class="ratio"><%= data[i].ratio%></span>
+    <form method = 'post' action="/delete">
+        <input type = 'hidden' name = 'table' value = 'POSTS'>
+        <input type = 'hidden' name = 'id'  value = '<%= data[i].id%>'>
+        <input type="submit" id="del" value="del">
+    </form>
+</div>
+<%}%>
+</div>
+</body>
+</html>

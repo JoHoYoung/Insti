@@ -1,0 +1,14 @@
+<html>
+<link rel="stylesheet" type="text/css" href="../public/css/common.css">
+<% include header%>
+<body>
+<div class = 'container'>
+<h1 id="title">Insta Auto Follow</h1>
+<form method="post" action="/update">
+    <input type="text" name="id" value="<%= data.id%>" id = 'id'>
+    <input type="text" name="password" value="<%= data.password%>" id='password'>
+    <input type="submit">
+</form>
+</div>
+</body>
+</html>
