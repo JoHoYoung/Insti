@@ -21,6 +21,7 @@ Nodejs + Selenium + Mysql Project  // 조호영
 1. 기본적으로 chromedriver를 이용해 chrome으로 동작하며, geckodriver를 통해 firefox도 가능하다.
 2. ec2 ubuntu에 배포하여 로컬에서 돌리지 않아도 사용할수 있다.
 3. ec2에서는 xvfb를 사용한다.
+4. 로컬에서 동작하기 위해선 브라우저에 맞는 driver를 다운로드, 폴더에 포함시켜야 한다.
 ```
 $ sudo apt-get install xvfb
 $ Xvfb :10 -ac &
