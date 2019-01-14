@@ -1,3 +1,4 @@
 chromedriver
 geckodriver
 config/*
+node_modules/*

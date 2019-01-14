@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0d8b30fd-846e-4e4f-bd63-4a75a4763cc1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/batches/Auto.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -119,7 +120,7 @@
         <counts>
           <entry key="css" value="132" />
           <entry key="ejs" value="96" />
-          <entry key="gitignore" value="36" />
+          <entry key="gitignore" value="51" />
           <entry key="js" value="98" />
           <entry key="md" value="1486" />
         </counts>
@@ -129,7 +130,7 @@
           <entry key="CSS" value="132" />
           <entry key="EJS" value="96" />
           <entry key="JavaScript" value="98" />
-          <entry key="PLAIN_TEXT" value="1522" />
+          <entry key="PLAIN_TEXT" value="1537" />
         </counts>
       </usages-collector>
     </session>
@@ -158,8 +159,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+            <state relative-caret-position="45">
+              <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -354,12 +355,12 @@
       <workItem from="1545354536465" duration="10541000" />
       <workItem from="1545371679874" duration="659000" />
       <workItem from="1545655234713" duration="1603000" />
-      <workItem from="1547294038976" duration="1053000" />
+      <workItem from="1547294038976" duration="1091000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15399000" />
+    <option name="totallyTimeSpent" value="15437000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -501,8 +502,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        <state relative-caret-position="45">
+          <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
         </state>
       </provider>
     </entry>
