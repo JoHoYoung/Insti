@@ -1,22 +1,74 @@
 <html>
 <link rel="stylesheet" type="text/css" href="../public/css/common.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <% include header%>
-<body>
-<div class = 'container'>
-<form method="post" action="/create">
-    <input type = 'hidden' name="table" value ='POSTS'>
-    <input type = 'text' name = 'url' id="url" placeholder="Url">
-    <input type = 'text' name = 'ratio' id = 'ratio' placeholder="Ratio">
-    <input type = 'submit' id = 'submit' value = 'GET'>
-</form>
+<script>
+    $(document).ready(function(){
+        $('#process').click(function(){
+            alert("Process is started")
+            $.ajax({
+                url: "/process/posts",
+                success: function (result) {
+                    alert("Process is done")
+                }
+            })
+        })
 
+        setInterval(function() {
+            $.ajax({
+                url: "/number2",
+                success: function (result) {
+                    let elements = document.getElementsByClassName('ratio')
+
+                    let first = document.getElementsByClassName('first')
+                    first[0].innerHTML = "The maximum number you can like post : " + (30-result.likeNum).toString()
+                    let second = document.getElementsByClassName('second')
+                    second[0].innerHTML = "The maximum number you can like comments :" + (30 - result.commentlikeNum).toString()
+
+                    for(let i=0;i<elements.length;i++)
+                    {
+                        result.commentlikeNum += parseInt(elements[i].innerHTML)
+                    }
+                    $('#process').html((30-result.commentlikeNum).toString())
+
+                    let num = parseInt(result.commentlikeNum)
+                    let likenum = parseInt(result.likeNum)
+
+                    let val = $('#ratio').val()
+                    if(parseInt(val) + num > 30 || result.commentNum > 30 || likenum + elements.length > 30 || num > 30) {
+                        $("#process").prop("disabled", true)
+                        if(likenum + elements.length > 30)
+                        {
+                            alert("게시글 Like 제한 초과")
+                        }
+                    }else
+                    {
+                        console.log('아니')
+                        $('#process').prop("disabled", false)
+                    }
+                }
+            })
+        },1000);
+    });
+</script>
+<body>
+<div class = 'content'>
+    <div class="first"></div><div class="second"></div>
+    <button id = 'process'></button>
+<form method="post" action="/create" class="get">
+    <input type = 'hidden' name="table" value ='POSTS'>
+    <input type = 'text' name = 'url' class = 'hashtag' id="url" placeholder="Url">
+    <input type = 'text' name = 'ratio' class = 'number' id = 'ratio' placeholder="number">
+    <input type = 'submit' id = 'submit' class = 'submit' value = 'GET'>
+</form>
+</div>
+    <div class = 'container'>
 <% for(let i = 0 ;i<data.length;i++){%>
 <div class = 'rowblock'>
     <span class= 'url'><%= data[i].url%></span><span class="ratio"><%= data[i].ratio%></span>
-    <form method = 'post' action="/delete">
+    <form method = 'post' action="/delete" id="no">
         <input type = 'hidden' name = 'table' value = 'POSTS'>
-        <input type = 'hidden' name = 'id'  value = '<%= data[i].id%>'>
-        <input type="submit" id="del" value="del">
+        <input type = 'hidden' name = 'id'  value = '<%= data[i].id%>'><input type="submit" id="del" value="X" class="kkdel">
     </form>
 </div>
 <%}%>

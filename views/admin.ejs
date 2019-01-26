@@ -1,14 +1,37 @@
 <html>
-<link rel="stylesheet" type="text/css" href="../public/css/common.css">
+<link rel="stylesheet" type="text/css" href="../public/css/admin.css">
 <% include header%>
 <body>
 <div class = 'container'>
-<h1 id="title">Insta Auto Follow</h1>
 <form method="post" action="/update">
     <input type="text" name="id" value="<%= data.id%>" id = 'id'>
     <input type="text" name="password" value="<%= data.password%>" id='password'>
-    <input type="submit">
+    <input type="submit" id ='sb1' value = 'SET'>
+</form>
+
+<form method = 'post' action ='/msg'>
+    <input type = 'text' name = 'msg' id="msg">
+    <input type = 'submit' value = 'SET' id="sb2">
 </form>
 </div>
+<form method="post" action="/delmsg" id = 'delform'>
+    <input type="hidden" name = 'msg' id = 'msgval'>
+</form>
+<select id='fruits' name='fruits' size='6' onchange='fruits_selected()'>
+    <option value='' selected>Messages</option>
+    <% for(let i=0;i<msg.length;i++){%>
+        <option><%= msg[i].msg%></option>
+    <%}%>
+</select>
+<script>
+    function fruits_selected() {
+        var obj = document.getElementById('fruits');
+        var index = obj.selectedIndex;
+        var text = obj.options[index].text;
+
+        document.getElementById('msgval').value = text
+        document.getElementById('delform').submit()
+    }
+</script>
 </body>
 </html>

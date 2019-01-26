@@ -19,15 +19,14 @@ nav1 {
     margin-left:-10px;
     margin-right:-10px;
     box-sizing: content-box;
-    margin-bottom : 3vw;
     z-index: 100;
     display: block;
     left: 0;
     top: 0;
-    width: 120%;
+    width: 100%;
     height: 90px;
-    border-bottom: 1px #d6d6d6 solid;
-    background-color: white;
+    border-bottom: 2px gold solid;
+    background-color: #08040a;
 }
 
 nav1 .wrap {
@@ -39,10 +38,12 @@ nav1 .wrap {
 }
 
 #logo {
+    background-image: url('../img/logo.png');
     margin-top:0;
     float: left;
     margin-left: 0px;
     height: 100%;
+    width: 150px;
 }
 
 #logo a {
@@ -57,7 +58,7 @@ nav1 .wrap {
 
 #logo p span.name {
     display: block;
-    color: #000000;
+    color: gold;
 }
 
 #mainname {
@@ -91,7 +92,7 @@ nav1 .wrap {
 
 #menu li a {
     font-size: 18px;
-    color: #4c4c4c;
+    color: gold
 }
 
 #account{

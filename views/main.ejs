@@ -1,11 +1,17 @@
-
+<link rel="stylesheet" type="text/css" href="../public/css/main.css">
+<!DOCTYPE html>
 <html>
-<% include header%>
+<head>
+    <title>Vingo Instagram Marketing Log In</title>
+</head>
 <body>
-<h1 id="title">Insta Auto Follow</h1>
-<form method="post" action="/follow">
-    <input type = 'text' name = 'url' id = 'url' placeholder="https://www.instagram.com/p/Qweqq_5d/">
-    <input type = 'submit' id = 'submit' value = 'GET'>
+<header>
+    <h1><img class='img' src='../public/img/logo.png'><br> </h1>
+</header>
+<form method = 'post' class='login' action='/signin' target='_self'>
+    <input class='box' type='text' name ='id' placeholder='email'> <br>
+    <input class='box' type='password' name = 'password' placeholder='password'><br>
+    <input class='submit' type='submit' value="LOGIN">
 </form>
+
 </body>
-</html>
