@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>dashboard</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/common.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+    $(document).ready(function(){
+        $('#process').click(function(){
+            $.ajax({
+                url: "/process/follow",
+                success: function (result) {
+                    alert("Process is done")
+                }
+            })
+        })
+
+        setInterval(function() {
+            $.ajax({
+                url: "/number3",
+                success: function (result) {
+                    let first = document.getElementsByClassName('first')
+                    first[0].innerHTML = "The maximum number you can follow : " + (30-result.followNum).toString()
+                    let elements = document.getElementsByClassName('ratio')
+                    for(let i=0;i<elements.length;i++)
+                    {
+                        console.log(elements[i].innerHTML)
+                        result.followNum += parseInt(elements[i].innerHTML)
+                    }
+
+                    if( result.followNum > 30) {
+                        $("#process").prop("disabled", true)
+
+                    }else
+                    {
+                        $('#process').prop("disabled", false)
+                    }
+                }
+            })
+        },1000);
+    });
+</script>
+<% include header%>
+<div class = 'content'>
+    <div class="first"></div><div class="second"></div>
+    <button id = 'process'></button>
+    <form method="post" action="/accountCreate" class="get">
+        <input type = 'text' name = 'url' class = 'hashtag' id="url" placeholder="Url">
+        <input type = 'text' name = 'ratio' class = 'number' id = 'ratio' placeholder="number">
+        <input type = 'submit' id = 'submit' class = 'submit' value = 'GET'>
+    </form>
+</div>
+<div class = 'container'>
+    <% for(let i = 0 ;i<data.length;i++){%>
+        <div class = 'rowblock'>
+            <span class= 'url'><%= data[i].url%></span><span class="ratio"><%= data[i].ratio%></span>
+            <form method = 'post' action="/delete" id="no">
+                <input type = 'hidden' name = 'table' value = 'ACCOUNT'>
+                <input type = 'hidden' name = 'id'  value = '<%= data[i].id%>'><input type="submit" id="del" value="X" class="kkdel">
+            </form>
+        </div>
+    <%}%>
+</div>
+</body>
+</html>

@@ -1,0 +1,294 @@
+* {
+    font-family: Barlow;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
+body{
+    background-color: #0d0324;
+}
+h2 {
+    color: white;
+    text-align: center;
+    font-weight: normal;
+    background-image: none;
+    padding: 300px;
+}
+
+img {
+    margin-right: 0px;
+    float: left;
+    width: 150px;
+    overflow: auto;
+    background-image: none;
+    margin-left: 20px;
+}
+
+.container{
+    border: 1px solid gold;
+    display: inline-block;
+    width: 70vw;
+    background-color: black;
+    margin-left: 3vw;
+    color: white;
+    height: 300px;
+    margin-top: 100px;
+}
+
+#menu {
+    margin-left: 400px;
+    position: absolute;
+    width: 800px;
+    margin-right:100px;
+    margin-top: 30px;
+}
+
+#menu li{
+    color: gold;
+    font-size: 15px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 0px;
+    margin-left:20px;
+    margin-right: 100px;
+}
+
+.get {
+    margin-left:300px;
+    margin-right:200px;
+    width: 70%;
+
+}
+
+.content {
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    padding-bottom: 80px;
+    background-color: #0d0324;
+
+}
+
+.links{
+    padding-left: 112px;
+    padding-top: 60px;
+
+}
+
+.hashtag, .number {
+    margin-top: 100px;
+    width: 500px;
+    height: 30px;
+    margin-left:10px;
+
+}
+.number {
+    width: 100px;
+}
+
+all {
+    background-color: black;
+    width: 1200px;
+    height: 100%;
+
+}
+
+.submit {
+    margin-left: 15px;
+    margin-top: 100px;
+    width: 80px;
+    height: 90px;
+
+}
+
+
+.hashtag, .number, .submit {
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid gold;
+    font-size: 15px;
+    text-align: center;
+    color: black;
+    background-color: #e5c8ff;
+
+}
+
+.delete, .selfie, .s1, .f10, .g5, .fitness, .giveaway {
+    border: 2px solid #d6c992;
+    border-radius:10px;
+    padding: 10px;
+    margin: 10px 10px 10px 0px;
+}
+
+.s1, .f10, .g5 {
+    width: 85px;
+    text-align: center;
+    height: 10px;
+    margin-left: px;
+}
+
+.delete {
+    width: 15px;
+    text-align: center;
+    border: 1px solid #dd8585;
+    border-radius: 5px;
+    margin-left: 25px;
+    height: 10px;
+}
+
+
+.selfie, .fitness, .giveaway {
+    width: 490px;
+    font-size: 15px;
+    height: 10px;
+    margin-left: 3px;
+
+}
+
+.links {
+    padding-left: 260px;
+}
+
+.url{
+    width: 500px;
+    margin-left: 110px;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 18px;
+    border:1px solid white;
+    padding-left:10px;
+    height: 30px;
+}
+.ratio
+{
+    display: inline-block;
+    border:1px solid white;
+    margin-left:20px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+}
+#del{
+    -webkit-appearance: none;
+    width: 80px;
+    height: 30px;
+    margin-left: 20px;
+    background-color: gold;
+    color: black;
+    font-size: 20px;
+    border-radius: 10px;
+}
+#no{
+    display: inline-block;
+}
+#process{
+
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    top: 185px;
+    left: 1100px;
+    background-color: #fffa4e;
+    border:4px solid #5703a5;
+}
+
+button:disabled,
+button[disabled]{
+    background-color: black !important;
+}
+
+#delform{
+    display: none;
+}
+
+select{
+    margin-right: 2vw;
+    overflow: hidden;
+    margin-top:1vw;
+    background-color: #1c0a2f;
+    float: right;
+    width: 20vw;
+    height: 100%;
+}
+
+option{
+    color: white;
+    height: 30px;
+    text-align: center;
+    font-size: 30px;
+}
+
+option:hover{
+    background-color:white;
+    color: black;
+}
+select option:checked{
+    background-color: gold;
+
+}
+
+#id{
+    width: 20vw;
+    height: 50px;
+    margin-left: 100px;
+    margin-top: 50px;
+    float: left;
+    background-color:#08040a;
+    color:white;
+    font-size:20px;
+    padding-left: 10px;
+    border:1px solid gold;
+}
+
+#password{
+    float: left;
+    margin-top: 50px;
+    height: 50px;
+    margin-left: 30px;
+    width: 10vw;
+    background-color:#08040a;
+    color:white;
+    font-size:20px;
+    padding-left: 10px;
+    border:1px solid gold;
+}
+
+#sb1{
+    margin-top: 50px;
+    height: 50px;
+    margin-left: 30px;
+    background-color:#08040a;
+    color:white;
+    font-size:20px;
+    border:3px solid gold;
+
+}
+
+#msg{
+
+    float: left;
+    margin-top: 50px;
+    height: 40px;
+    width: 40vw;
+    margin-left: 100px;
+    background-color:#08040a;
+    color:white;
+    font-size:20px;
+    border:1px solid gold;
+}
+#sb2{
+
+    margin-top: 50px;
+    margin-left: 20px;
+    width: 90px;
+    height: 40px;
+    float: left;
+    background-color:#08040a;
+    color:white;
+    font-size:20px;
+    border:3px solid gold;
+
+}
