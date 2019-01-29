@@ -54,6 +54,8 @@ $ sudo chmod +x geckodriver
 $ mv geckodrver insta
 ```
 
+
+
 자동화 대상의 CRUD 구현
 1. 기능에따라 테이블은 ADMIN, USER, POSTS, HASHTAG, ACCOUNT가 있다.
 2. ADMIN에는 인스타그램 계정정보를 저장한다.
