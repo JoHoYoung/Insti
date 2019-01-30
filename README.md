@@ -76,6 +76,8 @@ async function getDriver() {
 }                               // 드라이버를 가져오는 async 함수
 ```
 
+
+
 네트워크 환경을 통해 html을 제대로 가져와야 selenium을 제대로 사용할 수 있으므로 html내용을 제대로 가져온 후 작동하도록 sleep 함수를 구현하여 제어한다.
 ```
 async function sleep(timeinterval)
