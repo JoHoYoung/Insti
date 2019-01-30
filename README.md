@@ -54,8 +54,6 @@ $ sudo chmod +x geckodriver
 $ mv geckodrver insta
 ```
 
-
-
 자동화 대상의 CRUD 구현
 1. 기능에따라 테이블은 ADMIN, USER, POSTS, HASHTAG, ACCOUNT가 있다.
 2. ADMIN에는 인스타그램 계정정보를 저장한다.
@@ -65,3 +63,28 @@ $ mv geckodrver insta
 6. HASHTAG에는 특정 hashtag검색결과 게시글중 일부분을 좋아요, 자동댓글을 달 tag를 저장한다.
 7. ACCOUNT에는 특정 사람의 게시글중 일부분을 좋아요 댓글을달 특정사람의 url을 저장한다.
 8. 데이터 삭제시 따로 state를 변경하는 것이 아닌 해당 튜플을 delete 처리한다.
+
+모든 함수 Promise 를 통해 async로 제어한다.
+```
+async function getDriver() {
+
+    return new Promise((resolve, reject) => {
+        new webdriver.Builder().forBrowser('firefox').build().then(async (driver) => {
+            resolve(driver)
+        })
+    })
+}                               // 드라이버를 가져오는 async 함수
+```
+
+네트워크 환경을 통해 html을 제대로 가져와야 selenium을 제대로 사용할 수 있으므로 html내용을 제대로 가져온 후 작동하도록 sleep 함수를 구현하여 제어한다.
+```
+async function sleep(timeinterval)
+{
+    return new Promise((resolve,reject) => {
+
+        setTimeout((function(){
+            resolve(true)
+        }),timeinterval)
+})
+}
+```

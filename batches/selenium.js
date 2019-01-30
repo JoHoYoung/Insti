@@ -5,6 +5,7 @@ const Key = webdriver.Key
 const By = webdriver.By
 const rq = require("request-promise-native")
 const redis = require('../helper/redisPromise')
+
 function sleep(timeinterval)
 {
     return new Promise((resolve,reject) => {
@@ -14,7 +15,6 @@ function sleep(timeinterval)
         }),timeinterval)
 })
 }
-
 
 
 async function getDriver() {
