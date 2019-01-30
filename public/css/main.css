@@ -8,13 +8,10 @@ form{
     background-image: none;
 }
 
-* {
-    font-family: Aileron;
-    background-image: url('../img/Bitmap.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-
+html{
+    background-image: linear-gradient(125deg, #1e157b, #34195e 33%, #46145f 68%, #6f1d7c);
 }
+
 
 h1 {
     font-size: 25px;
