@@ -90,3 +90,24 @@ async function sleep(timeinterval)
 })
 }
 ```
+
+각 기능에 필요한 함수들을 모듈화 하여 코드 가독성, 재사용성을 높여 효율적으로 구현한다.
+```
+module.exports.fetchFollowerFromModal = fetchFollowerFromModal
+module.exports.followFromModal = followFromModal
+module.exports.sendSlackMessage = sendSlackMessage
+module.exports.sendMessageToSlackResponseURL = sendMessageToSlackResponseURL
+module.exports.getDriver = getDriver
+module.exports.fetchUrl = fetchUrl
+module.exports.commentToposts = commentToPost
+module.exports.loginToInsta = loginToInsta
+module.exports.crawlPostFromUser = crawlPostFromUser
+module.exports.crawlPostFromHashTag = crawlPostFromHasgTag
+module.exports.likeToPost = likeToPost
+module.exports.fetchAllComments = fetchAllComments
+module.exports.resetArrayWithPercent = resetArraywithPercent
+module.exports.resetArrayWithPercent2 = resetArraywithPercent2
+module.exports.getAllComments = getAllComments
+module.exports.likeToComment = likeToComment
+module.exports.followUser = followUser
+```
