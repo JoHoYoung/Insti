@@ -72,21 +72,6 @@ async function asyncdel(key)
     })
 }
 
-async function setNotisFromDBtoRedis()
-{
-    let conn= await db.connection()
-    let notis = (await conn.query("SELECT * FROM TODAY_NOTICE WHERE state = 'C' ORDER BY created_date"))[0];
-
-    for(let i=0;i<notis.length;i++)
-    {
-        redisClient.rpush("TODAY_NOTI",notis[i].id)
-        redisClient.hmset(notis[i].id,notis[i])
-    }
-
-    return new Promise((resolve,reject) => {
-        resolve(notis)
-    })
-}
 
 async function getCommentNum() {
     return new Promise(async (resolve, reject) => {
@@ -143,7 +128,6 @@ async function getFollowNum()
 }
 
 module.exports.redisClient = redisClient
-module.exports.setNotisFromDbtoRedis = setNotisFromDBtoRedis
 module.exports.asyncGet = asyncget
 module.exports.asyncGetall = asynchgetall
 module.exports.asyncLrange = asynlrange

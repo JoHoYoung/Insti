@@ -255,8 +255,6 @@ app.get('/process/hashtag', helper.asyncWrapper(async (req,res)=>{
         redis.redisClient.expire(postkey,3600)
 
     }
-
-
     for(let i=0;i<data.length;i++)
     {
         let commentNum = await redis.getCommentNum()

@@ -111,3 +111,114 @@ module.exports.getAllComments = getAllComments
 module.exports.likeToComment = likeToComment
 module.exports.followUser = followUser
 ```
+
+인스타 그램 규정
+1. Like 는 1시간에 30개를 초과하면 Like가 일시정지 된다.
+2. 댓글작성은 1시간에 30개를 초과하면 Like가 일시정지 된다.
+3. 댓글 Like는 1시간에 30개를 초과하면 일시정지 된다.
+4. Follow는 1시간에 30개를 초과하면 일시정지 된다.
+
+Redis
+1. 자주 사용하는 데이터 및, Queue 자료구조의 사용을 위해 Redis를 사용한다.
+2. Redis에 접근하는 함수는 Promise로 구현하여 제어한다.
+3. 해당 함수는 모듈화 하여 재사용, 관리한다.
+>> redisPromise.js
+```
+
+```
+
+해당 규정을 지키기 위해 Queue 사용.
+1. First In First Out(FIFO)으로 제약조건을 관리한다.
+2. 예를들어 하나의 게시물에 Like를 하면 Queue에 Push, 한시간후에 pop한다.
+3. 해당 로직으로 한시간에 30개를 초과하지 않도록 관리 할 수 있다.
+4. 해당기능은 Redis의 expire 기능으로 구현한다.
+5. 특정 기능을 수행할때마다 지정한 패턴으로 키를 생성하고, Redis에 특정패턴의 키가 몇개가 있는지 체크 하고, 30 - key 갯수 만큼 작업을 수행할 수 있게한다.
+6. 그 특정키는 1시간 후에 자동 소멸되도록 expire타임을 설정하여 관리한다.
+7. 프론트단에서 Ajax로 api를 호출하여 redis에 key 값을 체크하여 서버 call을 막는다
+8. 서버단에서는 프론트단에서 받은 값으로 로직을 처리하며, redis에 key를 설정한다.
+> Ajax로 Redis값을 가져오는 API
+```
+// redisPromise.js
+...
+async function getCommentLikeNum()
+{
+    return new Promise(async (resolve, reject) => {
+        let count = 0;
+
+        redisClient.keys('commentlike*', function (err, keys) {
+            keys.forEach(function (key, pos) {
+                count++
+            });
+            resolve(count)
+        })
+    })
+}
+...
+
+// app.js
+const redis = require("/helper/redisPromise.js")
+
+app.get('/number2', helper.asyncWrapper(async (req,res) => {   // Ajax로 프론트단에서 해당 API호출하여 서버 call 관리.
+
+    let pivot = await redis.getLikeNum()
+    let pivot2 = await redis.getCommentLikeNum()
+    let responseData = {likeNum:pivot, commentlikeNum: pivot2}
+
+    res.send(responseData);
+    res.end();
+
+}))
+```
+서버단에서 redis 에 key 셋팅 및 처리하는 예시.
+```
+app.get('/process/hashtag', helper.asyncWrapper(async (req,res)=>{
+    let conn = await db.connection()
+
+    let data = (await conn.query("SELECT * FROM HASHTAG WHERE state = 'C'"))[0]
+    let account = (await conn.query("SELECT * FROM ADMIN"))[0][0]
+    let driver = await selenium.getDriver()
+    await selenium.loginToInsta(driver, account.id, account.password)
+    let msg = (await conn.query("SELECT * FROM MSG"))[0]
+    await redis.asyncSet('hash', 1)
+
+    let count = (await conn.query("SELECT SUM(ratio) as sum FROM HASHTAG WHERE state != 'D'"))[0][0].sum
+    for(let i=0;i<count;i++)
+    {
+        let uid = uuid.v4()
+        let key = 'comment' + uid
+
+        await redis.asyncSet(key, 'comment');
+        redis.redisClient.expire(key,3600);
+        let postkey = 'like' +uuid.v4()
+        await redis.asyncSet(postkey,'l')
+        redis.redisClient.expire(postkey,3600)
+
+    }
+    for(let i=0;i<data.length;i++)
+    {
+        let commentNum = await redis.getCommentNum()
+
+        await selenium.fetchUrl(driver,data[i].url)
+        let posts = await selenium.crawlPostFromHashTag(driver)
+        console.log(msg)
+
+        posts = await selenium.resetArrayWithPercent(posts, parseInt(data[i].ratio))
+        console.log(posts)
+        for(let j=0;j<posts.length;j++)
+        {
+            let comment = msg[parseInt(Math.floor(Math.random()*msg.length))].msg
+            console.log(comment)
+
+            await selenium.fetchUrl(driver,posts[j])
+            await selenium.likeToPost(driver)
+            await selenium.commentToposts(driver,comment)
+        }
+    }
+    await driver.quit()
+    //await redis.asyncSet('hash', 0)
+    selenium.sendSlackMessage('InstaAutoBot - 해시태그 댓글 자동화 작업 완료')
+    conn.release()
+    res.json({statusCode:200, statusMsg:'success'})
+    res.end()
+}))
+```
