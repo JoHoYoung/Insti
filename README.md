@@ -220,7 +220,7 @@ Redis
 2. Redis에 접근하는 함수는 Promise로 구현하여 제어한다.
 3. 해당 함수는 모듈화 하여 재사용, 관리한다.
 
->> redisPromise.js
+> redisPromise.js
 
 ```
 module.exports.redisClient = redisClient
