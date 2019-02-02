@@ -124,7 +124,18 @@ Redis
 3. 해당 함수는 모듈화 하여 재사용, 관리한다.
 >> redisPromise.js
 ```
-
+module.exports.redisClient = redisClient
+module.exports.asyncGet = asyncget
+module.exports.asyncGetall = asynchgetall
+module.exports.asyncLrange = asynlrange
+module.exports.asyncSet = asyncset
+module.exports.asyncHmset = asynchmset
+module.exports.asyncRpush = asyncrpush
+module.exports.asyncDel = asyncdel
+module.exports.getCommentNum = getCommentNum
+module.exports.getLikeNum = getLikeNum
+module.exports.getCommentLikeNum = getCommentLikeNum
+module.exports.getFollowNum = getFollowNum
 ```
 
 해당 규정을 지키기 위해 Queue 사용.
