@@ -118,25 +118,6 @@ module.exports.followUser = followUser
 3. 댓글 Like는 1시간에 30개를 초과하면 일시정지 된다.
 4. Follow는 1시간에 30개를 초과하면 일시정지 된다.
 
-Redis
-1. 자주 사용하는 데이터 및, Queue 자료구조의 사용을 위해 Redis를 사용한다.
-2. Redis에 접근하는 함수는 Promise로 구현하여 제어한다.
-3. 해당 함수는 모듈화 하여 재사용, 관리한다.
->> redisPromise.js
-```
-module.exports.redisClient = redisClient
-module.exports.asyncGet = asyncget
-module.exports.asyncGetall = asynchgetall
-module.exports.asyncLrange = asynlrange
-module.exports.asyncSet = asyncset
-module.exports.asyncHmset = asynchmset
-module.exports.asyncRpush = asyncrpush
-module.exports.asyncDel = asyncdel
-module.exports.getCommentNum = getCommentNum
-module.exports.getLikeNum = getLikeNum
-module.exports.getCommentLikeNum = getCommentLikeNum
-module.exports.getFollowNum = getFollowNum
-```
 
 해당 규정을 지키기 위해 Queue 사용.
 1. First In First Out(FIFO)으로 제약조건을 관리한다.
@@ -232,4 +213,24 @@ app.get('/process/hashtag', helper.asyncWrapper(async (req,res)=>{
     res.json({statusCode:200, statusMsg:'success'})
     res.end()
 }))
+```
+
+Redis
+1. 자주 사용하는 데이터 및, Queue 자료구조의 사용을 위해 Redis를 사용한다.
+2. Redis에 접근하는 함수는 Promise로 구현하여 제어한다.
+3. 해당 함수는 모듈화 하여 재사용, 관리한다.
+>> redisPromise.js
+```
+module.exports.redisClient = redisClient
+module.exports.asyncGet = asyncget
+module.exports.asyncGetall = asynchgetall
+module.exports.asyncLrange = asynlrange
+module.exports.asyncSet = asyncset
+module.exports.asyncHmset = asynchmset
+module.exports.asyncRpush = asyncrpush
+module.exports.asyncDel = asyncdel
+module.exports.getCommentNum = getCommentNum
+module.exports.getLikeNum = getLikeNum
+module.exports.getCommentLikeNum = getCommentLikeNum
+module.exports.getFollowNum = getFollowNum
 ```
