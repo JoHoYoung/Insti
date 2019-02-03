@@ -236,3 +236,4 @@ module.exports.getLikeNum = getLikeNum
 module.exports.getCommentLikeNum = getCommentLikeNum
 module.exports.getFollowNum = getFollowNum
 ```
+<img width="558" alt="2019-02-02 3 26 24" src="https://user-images.githubusercontent.com/37579650/52193281-cdd26f00-2891-11e9-8cca-e52594cce1da.png">
