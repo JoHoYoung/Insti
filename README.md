@@ -61,7 +61,7 @@ $ mv geckodrver insta
 4. MSG에는 댓글목록을 저장한다.
 5. POSTS에는 댓글단 사람을 follow할 게시글의 url을 저장한다.
 6. HASHTAG에는 특정 hashtag검색결과 게시글중 일부분을 좋아요, 자동댓글을 달 tag를 저장한다.
-7. ACCOUNT에는 특정 사람의 게시글중 일부분을 좋아요 댓글을달 특정사람의 url을 저장한다.
+7. ACCOUNT에는 특정계정을 팔로우하는 계정을 팔로우할 계정의 주소를 저장한다.
 8. 데이터 삭제시 따로 state를 변경하는 것이 아닌 해당 튜플을 delete 처리한다.
 
 모든 함수 Promise 를 통해 async로 제어한다.

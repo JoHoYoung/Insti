@@ -427,9 +427,7 @@ app.get('/process/follow', helper.asyncWrapper(async (req,res) => {
 }))
 
 app.get("/success", helper.asyncWrapper(async (req, res) => {
-
         res.render('success')
-
 }))
 
 app.post("/delmsg", helper.asyncWrapper(async (req, res) => {
@@ -535,6 +533,21 @@ app.get("/test", helper.asyncWrapper(async (req, res) => {
         res.render('main')
     }
 }))
+
+app.get("/reset", helper.asyncWrapper(async (req, res) => {
+    let conn = db.connection()
+
+    await conn.query("DELETE FROM HASHTAG")
+    await conn.query("DELETE FROM USER")
+    await conn.query("DELETE FROM POSTS")
+    await conn.query("DELETE FROM ACCOUNT")
+    res.json({
+        statusCode:200
+    })
+    
+}))
+
+
 app.get("/", helper.asyncWrapper(async (req, res) => {
     if(req.session.user != null)
     {
