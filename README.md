@@ -239,5 +239,7 @@ module.exports.getFollowNum = getFollowNum
 <img width="558" alt="2019-02-02 3 26 24" src="https://user-images.githubusercontent.com/37579650/52193281-cdd26f00-2891-11e9-8cca-e52594cce1da.png">
 
 * * *
-<img width="400" alt="2019-02-05 5 56 33" src="https://user-images.githubusercontent.com/37579650/52264186-ee99d380-2928-11e9-9684-8888a6ec3301.png">  <img width="400" alt="2019-02-05 5 57 47" src="https://user-images.githubusercontent.com/37579650/52264187-ee99d380-2928-11e9-9da0-fd56f0f06e45.png">
-<img width="400" alt="2019-02-05 5 57 58" src="https://user-images.githubusercontent.com/37579650/52264188-ef326a00-2928-11e9-8265-137d81ef2dc3.png">  <img width="400" alt="2019-02-04 2 28 38" src="https://user-images.githubusercontent.com/37579650/52264189-ef326a00-2928-11e9-83f5-b6d9e7a3dae6.png">
+<img width="800" alt="2019-02-05 5 56 33" src="https://user-images.githubusercontent.com/37579650/52264186-ee99d380-2928-11e9-9684-8888a6ec3301.png">
+<img width="800" alt="2019-02-05 5 57 47" src="https://user-images.githubusercontent.com/37579650/52264187-ee99d380-2928-11e9-9da0-fd56f0f06e45.png">
+<img width="800" alt="2019-02-05 5 57 58" src="https://user-images.githubusercontent.com/37579650/52264188-ef326a00-2928-11e9-8265-137d81ef2dc3.png">
+<img width="800" alt="2019-02-04 2 28 38" src="https://user-images.githubusercontent.com/37579650/52264189-ef326a00-2928-11e9-83f5-b6d9e7a3dae6.png">
