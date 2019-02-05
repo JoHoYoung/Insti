@@ -93,6 +93,8 @@ async function sleep(timeinterval)
 
 각 기능에 필요한 함수들을 모듈화 하여 코드 가독성, 재사용성을 높여 효율적으로 구현한다.
 ```
+// ./batches/selenium.js
+
 module.exports.fetchFollowerFromModal = fetchFollowerFromModal
 module.exports.followFromModal = followFromModal
 module.exports.sendSlackMessage = sendSlackMessage
